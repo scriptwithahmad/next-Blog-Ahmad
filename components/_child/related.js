@@ -18,7 +18,7 @@ function Post() {
     <div className="flex gap-5">
       <div className="image flex flex-col jusitfy-start">
         <Image
-          src={"/Images/image1.jpg"}
+          src={"/Images/image2.jpg"}
           className="rounded"
           width={250}
           height={200}

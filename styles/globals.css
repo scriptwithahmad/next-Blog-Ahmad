@@ -110,7 +110,7 @@ a {
   @apply mt-1 block w-60 px-4 py-2 bg-white rounded-full text-sm shadow-md placeholder-slate-400;
   @apply focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500;
 }
-.imagesBox{
+.imagesBox {
   height: 220px;
   width: 100%;
 }
@@ -391,7 +391,7 @@ a {
   padding: 4px 9px;
   outline: none;
 }
-.formOuter form input:focus{
+.formOuter form input:focus {
   border: 1px solid #5e76bf;
 }
 .formOuter form button {
@@ -498,24 +498,33 @@ a {
 
 /* section 2  */
 /* Dashboard */
-.dash-wrapper{
+
+.backCover {
+  background: linear-gradient(90deg, #fafafa 20px, transparent 1%) 50%,
+    linear-gradient(#fafafa 20px, transparent 1%) 50%, #c7c4c4;
+  background-size: 22px 22px;
+  padding: 40px 0;
+  max-height: 100%;
+}
+
+.dash-wrapper {
   margin: 0 6%;
   border-radius: 10px;
   background-color: #fff;
   border: 1px solid #dcdcdc;
-  box-shadow: 0 0 20px 0 rgba(28,9,80,.15);
+  box-shadow: 0 0 20px 0 rgba(28, 9, 80, 0.15);
 }
-.dash-wrapper .mainTitle{
+.dash-wrapper .mainTitle {
   color: #444;
   padding: 0 6%;
   font-size: 32px;
   font-weight: 600;
   margin: 14px 12px;
 }
-.dash-wrapper .mainTitle span{
+.dash-wrapper .mainTitle span {
   color: darkcyan;
 }
-.dasboard-Main{
+.dasboard-Main {
   height: 100%;
   padding: 1% 6%;
   display: flex;
@@ -528,7 +537,7 @@ a {
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   padding: 12px;
   border: 1px solid #00000020;
 }
@@ -538,25 +547,27 @@ a {
   gap: 15px;
   align-items: center;
 }
-.das-col .das-sub-col .dasImgMain{
+.das-col .das-sub-col .dasImgMain {
   height: 150px;
   width: 200px;
 }
-.das-col .das-sub-col .das-img{
+.das-col .das-sub-col .das-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-.das-sub-col .das-info{
+.das-sub-col .das-info {
   line-height: 2;
 }
-.das-col .das-info .cate{
+.das-col .das-info .cate {
   line-height: normal;
 }
-.das-col .das-info .title{
+.das-col .das-info .title {
   font-size: 18px;
-  font-weight: 6T00;
+  font-weight: 600;
+  max-width: 30vw;
+  line-height: 1.4;
 }
 .das-col .action {
   margin-right: 18px;
@@ -565,17 +576,17 @@ a {
   color: #00000080;
   margin: 8px;
 }
-.das-col .action i:nth-child(1){
+.das-col .action i:nth-child(1) {
   color: #333;
 }
-.das-col .action i:nth-child(2){
+.das-col .action i:nth-child(2) {
   color: blue;
 }
-.das-col .action i:nth-child(3){
+.das-col .action i:nth-child(3) {
   color: red;
 }
-.das-col .action i:hover{
-  opacity: .8;
+.das-col .action i:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 

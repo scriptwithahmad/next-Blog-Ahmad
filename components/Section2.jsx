@@ -9,19 +9,19 @@ export const Section2 = ({ blog }) => {
     category: "",
   })
 
+
   const filterChangeHanderler = (e) => {
-    console.log(filter)
     setFilter({ ...filter, [e.target.name]: e.target.value })
   }
-
+  console.log(filter)
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest Posts </h1>
 
       <div className="filterMain">
         <div className="searcbox">
-          <select name="cate" id="cate" onChange={filterChangeHanderler}>
-            <option value="sel-cate">Select Category</option>
+          <select name="category" id="category" onChange={filterChangeHanderler}>
+            <option selected value="sel-category">Select Category</option>
             <option value="Education">Education</option>
             <option value="digital">Digital Marketing</option>
             <option value="Art and design">Art and Design</option>

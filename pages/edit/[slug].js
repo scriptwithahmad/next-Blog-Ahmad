@@ -66,14 +66,10 @@ const Dashborad = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const imageURI = await uploadImageToCloudinary()
       const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
       const data = await res.json();
-
-      setFormData(data?.singleBlog)
-      avatar: imageURI
-
-      // console.log(data)
+      
+      setFormData(data?.singleBlog);
     };
     fetchData();
   }, []);
@@ -81,7 +77,11 @@ const Dashborad = () => {
   const submitBlogHandler = async (e) => {
     try {
       e.preventDefault();
-      const send = await axios.put(`/api/blog/${slug}`, formData, setFormData);
+      const imageURI = await uploadImageToCloudinary();
+      const send = await axios.put(`/api/blog/${slug}`, {
+        ...formData,
+        avatar: imageURI,
+      });
       router.push("/dashboard");
     } catch (error) {
       console.log(error);

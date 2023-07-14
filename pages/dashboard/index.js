@@ -31,7 +31,8 @@ const Dashboard = ({ data }) => {
     <>
     <Toaster/>
       <NavBar />
-      <h1 className="text-center p-10 text-3xl font-semibold">Dashboard</h1>
+      <h1 className="text-center p-7 text-3xl font-semibold">Dashboard</h1>
+      <div class="backCover">
       <div className="dash-wrapper">
         <h1 className="mainTitle">
           CricCode <span>Blog</span>
@@ -73,6 +74,7 @@ const Dashboard = ({ data }) => {
             );
           })}
         </div>
+      </div>
       </div>
     </>
   );

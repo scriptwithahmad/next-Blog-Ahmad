@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Format from "@/layout/format";
 
 // COMPONENTS
@@ -7,11 +6,8 @@ import Section1 from "@/components/section1";
 import { Section2 } from "@/components/Section2";
 import { Section3 } from "@/components/section3";
 import { Section4 } from "@/components/Section4";
-// import blog from "@/models/blog";
 
-
-
-export default function Home({data}) {
+export default function Home({ data }) {
   // console.log(data)
   return (
     <>
@@ -22,21 +18,18 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Format>
-       <Section1 props={data} />
-       <Section2 blog={data} />
-       <Section3 props={data} />
-       <Section4 />
+        <Section1 props={data} />
+        <Section2 blog={data} />
+        <Section3 props={data} />
+        <Section4 />
       </Format>
     </>
   );
 }
 
+export async function getServerSideProps() {
+  const response = await fetch("http://localhost:3000/api/get-all-posts");
+  const data = await response.json();
 
-
-export async function getServerSideProps(){
-  const response = await fetch('http://localhost:3000/api/get-all-posts')
-  const data = await response.json()
-
-  return{ props: { data } }
+  return { props: { data } };
 }
-

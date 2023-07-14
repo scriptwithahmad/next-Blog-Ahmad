@@ -1,17 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Author } from "./_child/author";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// import SwiperCore, {Autoplay} from 'swiper'
+import SwiperCore, { Autoplay } from "swiper";
+
+// Import Swiper styles
 import "swiper/css";
 
 export const Section3 = ({ props }) => {
   // console.log(props.blogs);
+  SwiperCore.use([Autoplay]);
   return (
     <section className="contaienr mx:auto md:px-20 py-16">
       <h1 className="font-bold text-4xl py-12 text-center">Most Popular</h1>
 
-      <Swiper slidesPerView={2}>
+      <Swiper
+        slidesPerView={2}
+        loop={true}
+        autoplay={true}
+      >
         {props?.blogs?.map((v) => {
           return (
             <>
