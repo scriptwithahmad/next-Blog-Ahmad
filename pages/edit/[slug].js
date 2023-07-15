@@ -108,7 +108,6 @@ const Dashborad = () => {
               id="title"
               placeholder="Blog Title"
             />
-
             <label htmlFor="subTitle">Sub Title</label>
             <input
               value={formData.subTitle}
