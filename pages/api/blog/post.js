@@ -15,8 +15,6 @@ export default async function handler(req, res) {
       message: createdBlog,
     });
 
-    
-
   } catch (error) {
     if (error.code === 11000) {
       if (error.keyPattern.slug) {

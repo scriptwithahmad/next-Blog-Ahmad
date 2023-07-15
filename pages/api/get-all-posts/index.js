@@ -9,9 +9,7 @@ export default async function handler(req, res) {
     var page = req.query.page || 1
     var limit = req.query.limit || 10
     var skip = (page - 1) * limit
-
     var match = {}
-
     req.query.category && (match.category = req.query.category)
     req.query.keyword && (match.title = new RegExp(req.query.keyword,"i"))
 
