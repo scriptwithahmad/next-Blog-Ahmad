@@ -57,7 +57,7 @@ export default single;
 
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
-  const res = await fetch(`/api/blog/${slug}`);
+  const res = await fetch(`https://next-blog-ahmad.vercel.app/api/blog/${slug}`);
   const data = await res.json();
   return { props: { data } };
 }

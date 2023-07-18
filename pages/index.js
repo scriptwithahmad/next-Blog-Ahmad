@@ -28,7 +28,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const response = await fetch("/api/get-all-posts");
+  const response = await fetch("https://next-blog-ahmad.vercel.app/api/get-all-posts");
   const data = await response.json();
 
   return { props: { data } };
