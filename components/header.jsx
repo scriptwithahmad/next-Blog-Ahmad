@@ -27,7 +27,7 @@ const header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => signOut()}
                 >
-                  LogOut
+                  Logout
                 </span>
               </div>
             </div>

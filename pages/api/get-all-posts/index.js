@@ -5,7 +5,6 @@ export default async function handler(req, res) {
   dbConnect();
 
   try {
-
     var page = req.query.page || 1
     var limit = req.query.limit || 10
     var skip = (page - 1) * limit
@@ -17,8 +16,6 @@ export default async function handler(req, res) {
 
     const blogs = await BlogModel.find(match,{desc:0,metaDesc:0}).limit(limit).skip(skip).sort({createdAt:-1})
     const count = await BlogModel.find(match).count()
-
-
     res.status(200).json({
       success: true,
       count,
@@ -29,5 +26,4 @@ export default async function handler(req, res) {
   }
 }
 
-// API ROUTE
-// http://localhost:3000/api/get-all-posts
+

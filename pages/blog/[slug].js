@@ -57,7 +57,7 @@ export default single;
 
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`/api/blog/${slug}`);
   const data = await res.json();
   return { props: { data } };
 }

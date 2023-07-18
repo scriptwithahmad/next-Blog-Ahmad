@@ -10,7 +10,7 @@ const Dashboard = ({ data }) => {
   const delBlog = async (slug) => {
     try {
       if (window.confirm("Do you want to delete the blog") === true) {
-        const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+        const res = await fetch(`/api/blog/${slug}`, {
           method: "DELETE",
         });
 
@@ -83,7 +83,7 @@ const Dashboard = ({ data }) => {
 export default Dashboard;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/get-all-posts");
+  const res = await fetch("/api/get-all-posts");
   const data = await res.json();
 
   return { props: { data } };
