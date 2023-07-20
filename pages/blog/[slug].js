@@ -1,4 +1,4 @@
-import Realted from "@/components/_child/related";
+// import Realted from "@/components/_child/related";
 import Format from "@/layout/format";
 import Image from "next/image";
 import { Author } from "../../components/_child/author";
@@ -47,7 +47,7 @@ const single = ({ data }) => {
               )}
             </div>
           </div>
-          <Realted />
+          {/* <Realted /> */}
         </section>
       </Format>
     </div>
