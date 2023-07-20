@@ -4,6 +4,7 @@ import User from "../../../models/user";
 import bcrypt from "bcryptjs";
 import dbConnect from "@/config/dbConnect";
 
+
 export default NextAuth({
   session: {
     strategy: "jwt",

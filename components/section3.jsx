@@ -72,43 +72,5 @@ export const Section3 = ({ props }) => {
   );
 };
 
-// function Post() {
-//   return (
-//     <div className="grid">
-//       <div className="images">
-//         <Image
-//           src={"/Images/image2.jpg"}
-//           className="heroImg2 rounded"
-//           width={200}
-//           height={400}
-//           alt=""
-//         />
-//       </div>
-//       <div className="info flex justify-center flex-col py-4">
-//         <div className="cat">
-//           <Link className="text-orange-600 hover:text-orange-800" href={"/"}>
-//             Bussiness, Travel
-//           </Link>
-//           <Link className="text-gray-800 hover:text-gray-600" href={"/"}>
-//             -July 3, 2023
-//           </Link>
-//         </div>
-//         <div className="title">
-//           <Link
-//             href={"/"}
-//             className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600"
-//           >
-//             Your most unhappy costomers are your greatest source of learning
-//           </Link>
-//         </div>
-//         <p className="text-xs text-gray-500 py-3">
-//           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-//           harum corporis corrupti ipsum ratione, odio, fugiat explicabo a facere
-//           aliquam voluptatum eius inventore saepe quidem sequi sunt
-//           reprehenderit.
-//         </p>
-//         <Author></Author>
-//       </div>
-//     </div>
-//   );
-// }
+
+

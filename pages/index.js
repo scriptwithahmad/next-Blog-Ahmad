@@ -5,7 +5,7 @@ import Format from "@/layout/format";
 import Section1 from "@/components/section1";
 import { Section2 } from "@/components/Section2";
 import { Section3 } from "@/components/section3";
-import { Section4 } from "@/components/Section4";
+// import { Section4 } from "@/components/Section4";
 
 export default function Home({ data }) {
   // console.log(data)
@@ -21,7 +21,7 @@ export default function Home({ data }) {
         <Section1 props={data} />
         <Section2 blog={data} />
         <Section3 props={data} />
-        <Section4 />
+        {/* <Section4 /> */}
       </Format>
     </>
   );

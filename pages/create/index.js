@@ -216,7 +216,7 @@ const Dashborad = () => {
 export default Dashborad;
 
 export async function getServerSideProps() {
-  const res = await fetch("/api/get-all-posts");
+  const res = await fetch("https://next-blog-ahmad.vercel.app/api/get-all-posts");
   const data = await res.json();
 
   return { props: { data } };
