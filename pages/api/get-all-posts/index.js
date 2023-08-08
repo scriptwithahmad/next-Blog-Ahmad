@@ -12,7 +12,9 @@ export default async function handler(req, res) {
     req.query.category && (match.category = req.query.category)
     req.query.keyword && (match.title = new RegExp(req.query.keyword,"i"))
 
-
+    if(req.query.title) {
+      match.title = RegExp(req.query.title, "i")
+    }
 
     const blogs = await BlogModel.find(match,{desc:0,metaDesc:0}).limit(limit).skip(skip).sort({createdAt:-1})
     const count = await BlogModel.find(match).count()
@@ -21,6 +23,7 @@ export default async function handler(req, res) {
       count,
       blogs,
     });
+
   } catch (err) {
     console.log(err + "something Went Wrong");
   }

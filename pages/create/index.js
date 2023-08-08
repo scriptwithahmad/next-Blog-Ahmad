@@ -11,9 +11,6 @@ import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 const Dashborad = () => {
-
-  
-
   const editor = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -54,7 +51,7 @@ const Dashborad = () => {
 
       return jsonRes.secure_url;
     } catch (error) {
-      alert("Something wrong! while Uplading images");
+      alert("Something wrong! while Uplading image");
     }
   };
 
@@ -216,7 +213,9 @@ const Dashborad = () => {
 export default Dashborad;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://next-blog-ahmad.vercel.app/api/get-all-posts");
+  const res = await fetch(
+    "https://next-blog-ahmad.vercel.app/api/get-all-posts"
+  );
   const data = await res.json();
 
   return { props: { data } };

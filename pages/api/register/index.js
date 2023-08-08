@@ -1,4 +1,4 @@
-import User from "../../../models/user"
+import User from "../../../models/User"
 import dbConnect from "@/config/dbConnect"
 
 export default async function Handler(req, res) {
@@ -11,6 +11,5 @@ export default async function Handler(req, res) {
 
         console.log(user)
         res.status(201).json({ user })
-
     }
 }

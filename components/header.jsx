@@ -2,30 +2,39 @@
 
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import React from "react";
+import React, { useState } from "react";
 
 const header = () => {
   const { data } = useSession();
+  const [isOpen, setIsOpen] = useState(false)
+  // console.log(isOpen)
+
+  const toggleMenu = () => {
+    setIsOpen(true)
+  }
+
 
   return (
     <header className="header">
-      <div className="Nav">
+      <div id="Nav">
         <div className="sm:order-2">
           <Link className="font-bold text-3xl" href="/">
             CriCode
           </Link>
+          <i onClick={toggleMenu} class="menu-btn fa-solid fa-bars"></i>
         </div>
         {data?.user ? (
           <>
             <div className="order-3 flex justify-center">
               <div className="flex gap-6">
-                <Link href="/">Home</Link>
-                <Link href="/">About</Link>
-                <Link href="/create">Write</Link>
+                <Link className="link" href="/">Home</Link>
+                <Link className="link" href="/">About</Link>
+                <Link className="link" href="/create">Write</Link>
                 <span
                   children
                   style={{ cursor: "pointer" }}
                   onClick={() => signOut()}
+                  className="link"
                 >
                   Logout
                 </span>
@@ -39,10 +48,10 @@ const header = () => {
         ) : (
           <>
             <div className="flex gap-6 order-3">
-              <Link href="/">Home</Link>
-              <Link href="/">About</Link>
-              <Link href="/login">Login</Link>
-              <Link href="/register">Register</Link>
+              <Link className="link" href="/">Home</Link>
+              <Link className="link" href="/">About</Link>
+              <Link className="link" href="/login">Login</Link>
+              <Link className="link" href="/register">Register</Link>
             </div>
           </>
         )}

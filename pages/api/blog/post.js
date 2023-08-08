@@ -20,11 +20,10 @@ export default async function handler(req, res) {
       if (error.keyPattern.slug) {
         return res.status(409).json({
           success: false,
-          message: "Title Already Exits!",
+          message: "Title Already Exists!",
         });
       }
     }
-
     // Error Handle for Required Fields
     if (error.message?.split(":")[2]?.split(",")[0]?.trim()) {
       var errMessage = error.message.split(":")[2].split(",")[0].trim();

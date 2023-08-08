@@ -2,26 +2,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { Author } from "./_child/author";
 import { useState } from "react";
+import axios from "axios";
 
 export const Section2 = ({ blog }) => {
-
   const [filter, setFilter] = useState({
     category: "",
-  })
+  });
 
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
 
   const filterChangeHanderler = (e) => {
-    setFilter({ ...filter, [e.target.name]: e.target.value })
-  }
-  console.log(filter)
+    setFilter({ ...filter, [e.target.name]: e.target.value });
+  };
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/get-all-posts?category=${query}`);
+      setData(res.data?.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const inputHandle = (e) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest Posts </h1>
 
       <div className="filterMain">
         <div className="searcbox">
-          <select name="category" id="category" onChange={filterChangeHanderler}>
-            <option selected value="sel-category">Select Category</option>
+          <select
+            name="category"
+            id="category"
+            onChange={filterChangeHanderler}
+          >
+            <option selected value="sel-category">
+              Select Category
+            </option>
             <option value="Education">Education</option>
             <option value="digital">Digital Marketing</option>
             <option value="Art and design">Art and Design</option>
@@ -36,6 +57,8 @@ export const Section2 = ({ blog }) => {
           <i class="fa-solid fa-angle-left"></i>
           <p> 1-5 of 12 </p>
           <i class="fa-solid fa-angle-right"></i>
+          <input type="text" placeholder="search.." onChange={inputHandle} />
+          <button onClick={fetchData}>get data</button>
         </div>
       </div>
 

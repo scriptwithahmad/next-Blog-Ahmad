@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -65,10 +64,10 @@ a {
   object-fit: cover;
 }
 @media screen and (max-width: 768px) {
- .grid{
+  .grid {
     margin: 4px;
     padding: 8px;
- }
+  }
 }
 
 /* -------------- DASHBOARD --------------- */
@@ -189,7 +188,7 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.Nav {
+#Nav {
   /* border-bottom: 1px solid #00000010; */
   min-width: 100%;
   min-height: 10vh;
@@ -356,6 +355,13 @@ a {
   position: static;
   top: 0;
   left: 0;
+  position: relative;
+}
+.menu-btn {
+  position: absolute;
+  top: 50%;
+  left: 97%;
+  transform: translate(-50%, -50%);
 }
 .profileBox {
   gap: 8px;
@@ -384,11 +390,16 @@ a {
 .profileBox .userName:hover {
   color: darkcyan;
 }
-
-.Nav {
+#Nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .header #Nav .link {
+    display: none;
+  }
 }
 /* Header  */
 /* section 01  */
@@ -446,6 +457,47 @@ a {
   border: 1px solid #dcdcdc;
   box-shadow: 0 0 20px 0 rgba(28, 9, 80, 0.15);
 }
+.filterBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .innerInput {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+
+
+    & input {
+      width: 100%;
+      font-size: 14px;
+      color: darkcyan;
+      margin-right: 70px;
+      border-radius: 8px;
+      padding: 12px 85px 12px 8px;
+      border: 1px solid #00000020;
+    }
+    & :focus {
+      outline: none;
+      font-size: 14px;
+      border: 1px solid darkcyan;
+    }
+    & button{
+      background-color: darkcyan;
+      padding: 5px 14px;
+      color: white;
+      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+    }
+    & :hover{
+      opacity: .9;
+    }
+  }
+}
 .dash-wrapper .mainTitle {
   color: #444;
   padding: 0 6%;
@@ -456,6 +508,31 @@ a {
 .dash-wrapper .mainTitle span {
   color: darkcyan;
 }
+
+.cate-buttons {
+  gap: 10px;
+  margin: 1% 0;
+  padding: 0 6%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  & button {
+    padding: 6px;
+    flex-grow: 1;
+    font-size: 15px;
+    color: #292d34;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    background-color: #00000023;
+  }
+  & :hover {
+    background-color: darkcyan;
+    color: white;
+  }
+}
+
 .dasboard-Main {
   height: 100%;
   padding: 1% 6%;
