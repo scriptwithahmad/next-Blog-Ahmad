@@ -9,25 +9,7 @@ export const Section2 = ({ blog }) => {
     category: "",
   });
 
-  const [query, setQuery] = useState("");
-  const [data, setData] = useState([]);
 
-  const filterChangeHanderler = (e) => {
-    setFilter({ ...filter, [e.target.name]: e.target.value });
-  };
-
-  const fetchData = async () => {
-    try {
-      const res = await axios.get(`http://localhost:3000/api/get-all-posts?category=${query}`);
-      setData(res.data?.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const inputHandle = (e) => {
-    setQuery(e.target.value);
-  };
 
   return (
     <section className="container mx-auto md:px-20 py-10">
@@ -38,7 +20,6 @@ export const Section2 = ({ blog }) => {
           <select
             name="category"
             id="category"
-            onChange={filterChangeHanderler}
           >
             <option selected value="sel-category">
               Select Category
@@ -57,8 +38,8 @@ export const Section2 = ({ blog }) => {
           <i class="fa-solid fa-angle-left"></i>
           <p> 1-5 of 12 </p>
           <i class="fa-solid fa-angle-right"></i>
-          <input type="text" placeholder="search.." onChange={inputHandle} />
-          <button onClick={fetchData}>get data</button>
+          <input type="text" placeholder="search.." />
+          <button>get data</button>
         </div>
       </div>
 

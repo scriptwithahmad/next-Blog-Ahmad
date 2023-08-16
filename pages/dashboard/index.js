@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "../../components/header";
-import { Toast, Toaster, toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import axios from "axios";
@@ -52,6 +52,7 @@ const Dashboard = ({ data }) => {
           router.push("/dashboard");
         } else {
           toast.error("Something went Wrong");
+        
         }
       }
     } catch (error) {
@@ -129,7 +130,7 @@ const Dashboard = ({ data }) => {
                   </div>
                 </div>
               );
-            })} 
+            })}
           </div>
         </div>
       </div>

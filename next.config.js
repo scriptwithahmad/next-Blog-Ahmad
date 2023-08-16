@@ -11,9 +11,3 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-
-
-
-
-// vercel deploy process fail url
-// next-blog-ahmad-qv2n0gfku-scriptwithahmad.vercel.app
